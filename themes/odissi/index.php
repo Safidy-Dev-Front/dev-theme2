@@ -46,6 +46,9 @@
             </div>
             <div class="features__video">
                 <img src="<?php echo get_template_directory_uri().'/imgStatic/screen.png' ?>" alt="">
+                <div class="video_content">
+                     
+                </div>
             </div>
         </div>
     </section>
