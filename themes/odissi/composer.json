@@ -1,0 +1,14 @@
+{
+    "name": "ads-notion",
+    "description": "devthemes",
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "inc/"
+        }
+    },
+    "authors": [{
+        "name": "safidi",
+        "email": "ceo@safidiwebsolutions.com"
+    }],
+    "require": {}
+}
