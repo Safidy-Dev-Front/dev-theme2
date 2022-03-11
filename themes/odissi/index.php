@@ -233,8 +233,8 @@ Slate is designed for freelancers</p>
     <section id="contact">
         <div class="container">
             <div class="contact__head text-center">
-                <h2>Contact Us</h2>
-                <p class="h4">Most calendars are designed for teams. Slate is designed for freelancers</p>
+                <h2><?= the_field('title', 'option')?></h2>
+                <p class="h4"><?= the_field('contact_description', 'option')?></p>
             </div>
             <div class="contact__content">
                 <div class="col-12">
@@ -248,30 +248,38 @@ Slate is designed for freelancers</p>
                             <div class="contact__info">
                                 <div class="col-12">
                                     <div class="row">
+                                    <?php if( have_rows('contact_info', 'option') ): ?>
+                                        <?php while( have_rows('contact_info', 'option') ): the_row(); ?>
+                                            <?php 
+                                                $iconContactInfo = get_sub_field('icon');
+                                                $iconContactInfoUrl = $iconContactInfo['url'];
+                                            ?>
                                         <div class="col-4">
                                             <div class="contact__info-item">
-                                                <img src="" alt="">
-                                                <p>6386 Spring St undefined Anchorage, 
-Georgia 12473 United States</p>
+                                                <img src="<?= $iconContactInfoUrl ?>" alt="">
+                                                <p><?= the_sub_field('content') ?></p>
                                             </div>
                                         </div>
-                                        <div class="col-4">
-                                        <div class="contact__info-item">
-                                                <img src="" alt="">
-                                                <p>(843) 555-0130</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                        <div class="contact__info-item">
-                                                <img src="" alt="">
-                                                <p>willie.jennings@example.com</p>
-                                            </div>
-                                        </div>
+                                        <?php endwhile ?>
+                                    <?php endif ?>
                                     </div>
                                 </div>
                             </div>
                             <div class="contact__maps text-center">
-                                <iframe src="https://www.google.com/maps/d/embed?mid=1pGPpoTbRXbaa017Qti5ote6gLmWO4YUJ&ehbc=2E312F" width="100%" height="480"></iframe>
+                                <iframe src="https://www.google.com/maps/d/embed?mid=1pGPpoTbRXbaa017Qti5ote6gLmWO4YUJ&ehbc=2E312F" width="100%" height="430"></iframe>
+                            </div>
+                            <div class="contact__social">
+                                <?php if( have_rows('contact_social', 'option') ):  ?>
+                                    <?php   while( have_rows('contact_social', 'option') ): the_row();?>
+                                    <?php 
+                                        $iconSocial = get_sub_field('icon');
+                                        $iconSocialUrl = $iconSocial['url'];
+                                    ?>
+                                    <a href="<?php echo get_sub_field('lien') ?>">
+                                        <img src="<?=$iconSocialUrl ?>" alt="">
+                                    </a>
+                                    <?php endwhile?>
+                                <?php endif  ?>
                             </div>
                         </div>
                     </div>

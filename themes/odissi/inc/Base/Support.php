@@ -11,6 +11,7 @@
                 acf_add_options_page();
                 acf_add_options_sub_page('header');
                 acf_add_options_sub_page('footer');  
+                acf_add_options_sub_page('contact');  
             }
         }
         

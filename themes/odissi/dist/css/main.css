@@ -11421,8 +11421,8 @@ input.wpcf7-submit {
   margin-right: 0;
 }
 .header__social img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
@@ -11688,6 +11688,11 @@ input.wpcf7-submit {
   background-color: #ffffff;
 }
 
+.contact__maps {
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+}
 .contact__maps imframe {
   width: 100%;
 }
@@ -11703,6 +11708,23 @@ input.wpcf7-submit {
 
 .contact__info {
   margin-bottom: 50px;
+}
+
+.contact__info-item img {
+  margin-bottom: 20px;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.contact__social {
+  margin-top: 50px;
+}
+.contact__social a {
+  margin-right: 10px;
+}
+.contact__social a:last-child {
+  margin-right: 0;
 }
 
 #footer {
