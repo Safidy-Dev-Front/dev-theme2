@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+.row-header-nav {
+    align-items: center;
+}
+
 .header__navigation {
     position: relative;
     display: flex;
@@ -57,4 +61,15 @@
 
 .header__social {
     text-align: right;
+    a {
+        margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
 }

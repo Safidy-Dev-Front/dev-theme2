@@ -5,7 +5,7 @@ wp_head();
     <div class="header__container">
         <div class="header__navigation">
             <div class="container">
-               <div class="row">
+               <div class="row row-header-nav">
                 <div class="col-6 col-lg-8 col-md-8">
                     <div class="row header_flex">
                         <div class="col-8">
@@ -32,7 +32,17 @@ wp_head();
                     </div>
                     <div class="col-6 col-lg-4 col-md-4 ">
                         <div class="header__social text-right">
-                            contact
+                            <?php if( have_rows('element_reseaux_social', 'option') ):  ?>
+                                <?php   while( have_rows('element_reseaux_social', 'option') ): the_row();?>
+                                <?php 
+                                    $iconSocial = get_sub_field('icon');
+                                    $iconSocialUrl = $iconSocial['url'];
+                                ?>
+                                <a href="<?php echo get_sub_field('lien') ?>">
+                                    <img src="<?=$iconSocialUrl ?>" alt="">
+                                </a>
+                                <?php endwhile?>
+                            <?php endif  ?>
                         </div>
                     </div>
                </div> 

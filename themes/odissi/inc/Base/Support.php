@@ -7,6 +7,11 @@
     {
         public function register(){
             add_action('after_setup_theme', [$this,'theme_support']);
+            if(function_exists('acf_add_options_page')){
+                acf_add_options_page();
+                acf_add_options_sub_page('header');
+                acf_add_options_sub_page('footer');  
+            }
         }
         
         /**
